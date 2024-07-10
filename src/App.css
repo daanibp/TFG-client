@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+.App {
+    height: 100vh;
+    width: 100vw;
+}
+
+body {
+    overflow: hidden;
+}
+
+.navigation {
+    height: 7vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2F4050;
+}
+
+.login-registration {
+    display: flex;
+    align-items: center;
+}
+
+.login-registration a {
+    text-decoration: none;
+    color: white;
+    margin-right: 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+}
+
+.brand a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-left: 1vw;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info-container {
+    margin-right: 20px;
+}
+
+.user-info h1 {
+    font-size: 1.5em;
+    color: white;
+}
+
+.logout-btn {
+    background-color: #ff5555;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.rbc-event-content {
+    display: flex;
+    align-items: center;
+}
+.rbc-event-content svg {
+    margin-right: 5px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.calendarPage,
+.adminPage {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+
+.perfil-btn {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    width: auto;
+    padding: 10px;
+    background-color: #2F4050;
+    cursor: pointer;
+}
+
+.perfil-btn svg {
+    transform: scale(1.5);
+    margin-right: 10px;
+    color: white;
+}
+
+.perfil {
+    width: 30vw;
+    height: 40vh;
+    margin: auto;
+    padding: 20px;
+    background-color: #2F4050;
+    color: white;
+    border: 3px solid black;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+}
+
+.perfil h2 {
+    margin-bottom: 5%;
+}
+
+.perfil button {
+    display: block;
+    width: 40%;
+    margin: 0 auto;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #2F4050;
+    color: white;
+    border: 3px solid white;
+    cursor: pointer;
+}
+
+.perfil button:hover {
+    background-color: #253341;
+}
+
+.error-message {
+    margin-top: 2%;
+    margin-bottom: 5%;
+    color: red;
+}
+
+
+

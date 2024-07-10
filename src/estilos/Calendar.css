@@ -1,0 +1,396 @@
+.Calendar {
+    height: 65vh;
+    width: 77vw;
+    margin-left: 1.7%;
+    margin-top: 1%;
+}
+
+.box {
+    position: relative;
+    height: 84vh;
+    width: 80vw;
+    margin-left: 2.5%;
+    margin-top: 1.2%;
+    border: 3px solid #2F4050;
+}
+
+.boxTitleLabel {
+    margin-top: 1%;
+    margin-left: 1.7%;
+    margin-right: 1.7%;
+    margin-bottom: 1%;
+    border: 1px solid #2F4050;
+}
+
+.titleLabel {
+    margin: 0.5%;
+    font-size: 25px;
+}
+
+.opcionesBotones {
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.HorarioYCalendario {
+    display: flex;
+    margin-left: 1%;
+}
+
+.EspacioAñadirEvento {
+    display: flex;
+}
+
+.EspacioEscogerGruposProfesor {
+    display: flex;
+    margin-right: 1%;
+}
+
+.EspacioCompartirEventosAlumnos {
+    display: flex;
+    margin-right: 1%;
+}
+
+#extraGlobal {
+    margin-left: 1%;
+}
+
+.EspacioGoogleApple {
+    display: flex;
+    margin-right: 1%;
+}
+
+.boton-activo {
+    background-color: #2F4050;
+    color: white;
+}
+
+#HorarioDeClases {
+    cursor: pointer;
+    border: 1px solid #2F4050;
+    width: 40vh;
+    height: 5vh;
+}
+
+#HorarioDeExamenes {
+    cursor: pointer;
+    border: 1px solid #2F4050;
+    width: 40vh;
+    height: 5vh;
+}
+
+#AddEvent {
+    cursor: pointer;
+    border: 1px solid #2F4050;
+    height: 5vh;
+    width: 5vw;
+}
+
+#DeleteEvent {
+    cursor: pointer;
+    border: 1px solid #2F4050;
+    height: 5vh;
+    width: 5vw;
+}
+
+#Google {
+    cursor: pointer;
+    border: 1px solid #2F4050;
+    height: 5vh;
+    width: 5vw;
+}
+
+#Apple {
+    cursor: pointer;
+    border: 1px solid #2F4050;
+    height: 5vh;
+    width: 5vw;
+}
+
+#Profesor {
+    cursor: pointer;
+    border: 1px solid #2F4050;
+    height: 5vh;
+    width: 5vw;
+}
+
+#CompartirProfesor {
+    cursor: pointer;
+    border: 1px solid #2F4050;
+    height: 5vh;
+    width: 5vw;
+}
+
+#Alumno {
+    cursor: pointer;
+    border: 1px solid #2F4050;
+    height: 5vh;
+    width: 5vw;
+}
+
+#Solicitudes {
+    cursor: pointer;
+    border: 1px solid #2F4050;
+    height: 5vh;
+    width: 5vw;
+}
+
+.txtHorCl {
+    font-size: 15px;
+    transform: scale(1.1);
+    text-align: center;
+}
+
+.txtHorEx {
+    font-size: 15px;
+    text-align: center;
+    transform: scale(1.1);
+}
+
+.addEvent{
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.addEvent svg {
+    font-size: 100%; /* Esto asegura que el tamaño del SVG se ajuste automáticamente */
+    max-height: 100%; /* Ajustar el tamaño máximo del SVG al 100% del contenedor */
+    transform: scale(2);
+}
+
+.deleteEvent{
+    font-size: 15px;
+    display: flex;
+    align-items: center; /* Centrar el contenido verticalmente */
+    justify-content: center; /* Centrar el contenido horizontalmente */
+}
+
+.deleteEvent svg {
+    font-size: 100%; /* Esto asegura que el tamaño del SVG se ajuste automáticamente */
+    max-height: 100%; /* Ajustar el tamaño máximo del SVG al 100% del contenedor */
+    transform: scale(2.4);
+}
+
+.logoGoogle {
+    font-size: 15px;
+    display: flex;
+    align-items: center; /* Centrar el contenido verticalmente */
+    justify-content: center; /* Centrar el contenido horizontalmente */
+}
+
+.logoGoogle svg {
+    font-size: 100%; /* Esto asegura que el tamaño del SVG se ajuste automáticamente */
+    max-height: 100%; /* Ajustar el tamaño máximo del SVG al 100% del contenedor */
+    transform: scale(2);
+}
+
+.logoApple {
+    font-size: 15px;
+    display: flex;
+    align-items: center; /* Centrar el contenido verticalmente */
+    justify-content: center; /* Centrar el contenido horizontalmente */
+}
+
+.logoApple svg {
+    font-size: 100%; /* Esto asegura que el tamaño del SVG se ajuste automáticamente */
+    max-height: 100%; /* Ajustar el tamaño máximo del SVG al 100% del contenedor */
+    transform: scale(2);
+    color: grey;
+}
+
+.logoProfesor {
+    font-size: 15px;
+    display: flex;
+    align-items: center; /* Centrar el contenido verticalmente */
+    justify-content: center; /* Centrar el contenido horizontalmente */
+}
+
+.logoProfesor svg {
+    font-size: 100%; /* Esto asegura que el tamaño del SVG se ajuste automáticamente */
+    max-height: 100%; /* Ajustar el tamaño máximo del SVG al 100% del contenedor */
+    transform: scale(2);
+    color: grey;
+}
+
+.logoCompartirProfesor {
+    font-size: 15px;
+    display: flex;
+    align-items: center; /* Centrar el contenido verticalmente */
+    justify-content: center; /* Centrar el contenido horizontalmente */
+}
+
+.logoCompartirProfesor svg {
+    font-size: 100%; /* Esto asegura que el tamaño del SVG se ajuste automáticamente */
+    max-height: 100%; /* Ajustar el tamaño máximo del SVG al 100% del contenedor */
+    transform: scale(2);
+    color: grey;
+}
+
+.logoCompartir {
+    font-size: 15px;
+    display: flex;
+    align-items: center; /* Centrar el contenido verticalmente */
+    justify-content: center; /* Centrar el contenido horizontalmente */
+}
+
+.logoCompartir svg {
+    font-size: 100%; /* Esto asegura que el tamaño del SVG se ajuste automáticamente */
+    max-height: 100%; /* Ajustar el tamaño máximo del SVG al 100% del contenedor */
+    transform: scale(2);
+    color: grey;
+}
+
+.logoVerSolicitudes {
+    font-size: 15px;
+    display: flex;
+    align-items: center; /* Centrar el contenido verticalmente */
+    justify-content: center; /* Centrar el contenido horizontalmente */
+}
+
+.logoVerSolicitudes svg {
+    font-size: 100%; /* Esto asegura que el tamaño del SVG se ajuste automáticamente */
+    max-height: 100%; /* Ajustar el tamaño máximo del SVG al 100% del contenedor */
+    transform: scale(2);
+    color: grey;
+}
+
+.sidebar-calendar {
+    display: flex;
+}
+
+#miSidebar {
+    margin-top: 1%;
+    margin-left: 1%
+}
+
+.event {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.rbc-active {
+    background: #2F4050 !important;
+    padding: 10px;
+    color: white !important;
+}
+
+.rbc-day-bg {
+    background: white;
+}
+
+.rbc-time-content {
+    background: white;
+    height: 50vh !important;
+}
+
+.rbc-today {
+    background: rgb(108, 187, 108);
+}
+
+.rbc-toolbar {
+    display:flex;
+    flex-wrap: nowrap;
+}
+
+.rbc-event {
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.rbc-event svg {
+    font-size: 100%;
+    max-height: 100%;
+    transform: scale(1);
+    align-items: center;
+    position: relative;
+    top: 2px;
+}
+
+.event-info-box {
+    position: absolute;
+    top: 45vh;
+    right:30vw;
+    border: 3px solid white;
+    background-color: #2F4050;;
+    color: white;
+    z-index: 1000;
+}
+
+.event-info-box h2 {
+    margin: 10px;
+  }
+  
+.event-info-box p {
+    margin: 12px; 
+}
+  
+.event-info-box button {
+    margin: 10px;
+    background-color: #2F4050;
+    border: 3px solid white;
+    color: white;
+    cursor: pointer;
+}
+
+.mensaje {
+    margin: 10px;
+    margin-right: 20px;
+    background-color: #2F4050;
+    border: 3px solid white;
+    color: white
+}
+
+.mensaje p {
+    margin-left: 10px;
+}
+
+.mensaje button {
+    margin: 10px;
+    background-color: #2F4050;
+    border: 3px solid white;
+    color: white;
+    cursor: pointer;
+}
+
+.message-box {
+    font-size: 18px;
+    position: fixed;
+    top: 50%;
+    left: 57.8vw;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #2F4050;
+    border: 2px solid #111;
+    color: white;
+    z-index: 1000;
+}
+
+.message-box button {
+    margin-top: 5%;
+    border: 2px solid white;
+    color: white;
+    background-color: #2F4050;
+    cursor: pointer;
+}
+
+.TituloSolicitud {
+    margin-bottom: 3%;
+    border: 2px solid white;
+}
+
+
+
+
+
+
+
+
+  
+  
+  
+  

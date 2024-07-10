@@ -1,0 +1,131 @@
+.containerCompartirEventos {
+    display: flex;
+    width: 65vw;
+    height: 60vh;
+    margin: auto;
+    padding: 20px;
+    background-color: #2F4050;
+    color: white;
+    border: 3px solid black;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+}
+
+.EventosC {
+    height: 100%;
+    width: 25%;
+    margin-right: 2%;
+
+    border: 3px solid white;
+    overflow-y: auto;
+}
+
+.EventosC h1 {
+    margin-bottom: 20px;
+}
+
+.EventosC li {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.EventosC label {
+    width: 100%;
+}
+.EventosC select {
+    width: 100%;
+}
+
+.EventosS {
+    height: 100%;
+    width: 25%;
+    margin-right: 2%;
+
+    border: 3px solid white;
+    overflow-y: auto;
+}
+
+.EventosS h1 {
+    margin-bottom: 20px;
+}
+
+.EventosS li {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.UsuariosC {
+    height: 100%;
+    width: 25%;
+    margin-right: 2%;
+
+    border: 3px solid white;
+    overflow-y: auto;
+}
+
+.UsuariosC h1 {
+    margin-bottom: 20px;
+}
+
+.UsuariosC li {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.UsuariosC button {
+    width: 75%;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.UsuariosC button:hover {
+    background-color: rgb(202, 202, 202);
+}
+
+.UsuariosSele {
+    width: 25%;
+    height: 100%;
+}
+
+.UsuariosS {
+    height: 80%;
+    width: 100%;
+    margin-right: 2%;
+
+    border: 3px solid white;
+    overflow-y: auto;
+}
+
+.UsuariosS h1 {
+    margin-bottom: 20px;
+}
+
+.UsuariosS li {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.btnCompartir {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 20%;
+}
+
+.btnCompartir button{
+    background-color: #2F4050;
+    color: white;
+    border: 3px solid white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.btnCompartir button:hover{
+    background-color: #253341;
+}

@@ -1,0 +1,108 @@
+.Sidebar {
+    height: 84vh;
+    width: 14vw;
+    background-color: white;
+    border: 3px solid #2F4050;
+    margin-left: 1%;
+    margin-top: 1%;
+  }
+
+.titleAreaPersonalSideBar {
+    font-size: 40px;
+    margin: 7%;
+    text-align: center;
+}
+
+.SidebarList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.containerCompleto {
+  cursor: pointer;
+  padding: 10px;
+  transition: background-color 0.3s;
+}
+
+.containerCompleto:hover {
+  background-color: #2F4050;
+  color: white
+}
+
+.containerCompleto.active {
+  background-color: #2F4050;
+  color: white;
+}
+
+.fila {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Alinea elementos al inicio y al final */
+  font-size: 18px;
+  margin-top: 5%;
+  margin-left: 5%;
+  position: relative; /* Añade posición relativa para posicionar la flecha */
+}
+
+.iconoText {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+
+.fila svg {
+  margin-right: 10px;
+}
+
+.SubmenuList {
+  list-style: none;
+  margin-top: 5px;
+  padding-left: 17%; /* Indentación para submenús */
+}
+
+.SubmenuList li {
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.SubmenuList li:hover {
+  background-color: #001646;
+  color: white;
+}
+
+.SubmenuList svg {
+  margin-right: 10px;
+  font-size: 15px;
+}
+
+.children {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  margin-top: 5%;
+  padding: 10px;
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  margin-left: 8px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.arrow.up {
+  border-bottom: 6px solid #000;
+  transform: rotate(-90deg);
+}
+
+.arrow.down {
+  border-top: 6px solid #000;
+  transform: rotate(90deg);
+}
+  
+
+

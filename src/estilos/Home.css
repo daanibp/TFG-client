@@ -1,0 +1,56 @@
+/* Home.css */
+.container {
+    text-align: center;
+    margin: 50px;
+}
+
+.title {
+    font-size: 2em;
+    color: #333;
+}
+
+.subtitle {
+    font-size: 1.5em;
+    color: #666;
+}
+
+/* Flex container for authenticated user area */
+.boxHome {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Container for notifications area */
+.boxNotificaciones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid #2F4050;
+    margin-top: 1.2%;
+    margin-left: 2.5%;
+    padding: 20px;
+    width: 80vw;
+    box-sizing: border-box;
+    height: 50vh;
+}
+
+/* Title for notifications */
+.boxNotificaciones h1 {
+    margin-bottom: 20px;
+}
+
+/* Notification box styles */
+.Notificaciones {
+    border: 2px solid #2F4050;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.notificacion-item {
+    margin: 1%
+}
+
+
+

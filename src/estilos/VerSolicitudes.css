@@ -1,0 +1,194 @@
+.containerVerSolicitudes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40vw;
+    height: 60vh;
+    margin: auto;
+    padding: 20px;
+    background-color: #2F4050;
+    color: white;
+    border: 3px solid black;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9000;
+}
+
+.containerVerSolicitudes h1 {
+    text-align: center;
+    width: 100%;
+}
+
+.GestionarSolicitudes {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 2%;
+}
+
+.GestionarSolicitudes button {
+    width: 5vw;
+    height: 3vh;
+    border: 1px solid #2F4050;
+    cursor: pointer;
+}
+
+.GestionarSolicitudes button:hover {
+    background-color: #ccc;
+}
+
+.GestionarSolicitudes button {
+    width: 5vw;
+    height: 3vh;
+    border: 1px solid #2F4050;
+    cursor: pointer;
+}
+
+.GestionarSolicitudes button:hover {
+    background-color: #ccc;
+}
+
+.boxSolicitudesEventos {
+    width: 100%;
+    margin-top: 2%;
+    text-align: center;
+    border: 1px solid #2F4050;
+    overflow-x: auto; 
+    overflow-y: auto;
+    white-space: nowrap;
+}
+
+.boxSolicitudesEventos table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.boxSolicitudesEventos th,
+.boxSolicitudesEventos td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+.boxSolicitudesEventos th {
+    background-color: #2F4050;
+    color: white;
+}
+
+.boxSolicitudesEventos th:nth-child(1),
+.boxSolicitudesEventos td:nth-child(1) {
+  /* Estilo para la primera columna */
+  width: 60%;
+}
+
+.boxSolicitudesEventos th:nth-child(2),
+.boxSolicitudesEventos td:nth-child(2) {
+  /* Estilo para la segunda columna */
+  width: 10%;
+}
+
+.boxSolicitudesEventos th:nth-child(3),
+.boxSolicitudesEventos td:nth-child(3) {
+  /* Estilo para la tercera columna */
+  width: 10%;
+}
+
+.boxSolicitudesEventos th:nth-child(4),
+.boxSolicitudesEventos td:nth-child(4) {
+  /* Estilo para la tercera columna */
+  width: 10%;
+}
+
+.boxSolicitudesEventos th:nth-child(5),
+.boxSolicitudesEventos td:nth-child(5) {
+  /* Estilo para la tercera columna */
+  width: 10%;
+}
+
+.botonAceptar {
+    width: 30%;
+    height: 100%;
+    background-color: #08b925;
+    color: white;
+    border: none;
+    margin-left: 5px;
+    cursor: pointer;
+    font-size: 20px;
+}
+.botonDenegar {
+    width: 30%;
+    height: 100%;
+    background-color: #e70000;
+    color: white;
+    border: none;
+    margin-left: 5px;
+    cursor: pointer;
+    font-size: 20px;
+}
+.botonDetalles {
+    width: 30% !important;
+    height: 100%;
+    background-color: #2F4050;
+    color: white;
+    border: 1px solid white !important;
+    margin-left: 10%;
+    cursor: pointer;
+    font-size: 14px;
+}
+.botonDetalles:hover {
+    background-color: #253341 !important;
+}
+
+.fa-eye {
+    font-size: 16px;
+}
+
+.button-active {
+    background-color: #2F4050;
+    color: white;
+    border: 1px solid white !important;
+}
+
+.button-active:hover {
+    background-color: #253341 !important;
+}
+
+.solicitudDetails {
+    border: 3px solid white !important;
+    background-color: #2F4050;
+    width: auto !important;
+    height: auto;
+    position: fixed;
+    top: 50%;
+    left: 57.5%;
+    transform: translate(-50%, -50%);
+    z-index: 1000000;
+    color: white;
+    text-align: center;
+}
+
+.solicitudDetails h2{
+    margin: 3%;
+}
+
+.solicitudDetails p {
+    margin-left: 5%;
+    margin-bottom: 1%;
+}
+
+.solicitudDetails button{
+    margin-top: 5%;
+    cursor: pointer;
+    background-color: #2F4050;
+    border: 1px solid white;
+    color: white;
+    font-size: 18px;
+}
+
+.solicitudDetails button:hover {
+    background-color: #253341;
+}

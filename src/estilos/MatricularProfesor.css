@@ -1,0 +1,155 @@
+.containerMatricularProfesor{
+    display: flex;
+    width: 65vw;
+    height: 60vh;
+    margin: auto;
+    padding: 20px;
+    background-color: #2F4050;
+    color: white;
+    border: 3px solid black;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+}
+
+.AsignaturasP {
+    height: 100%;
+    width: 33.3%;
+    margin-right: 2%;
+
+    border: 3px solid white;
+    overflow-y: auto;
+}
+
+.AsignaturasP h1 {
+    margin-bottom: 20px;
+}
+
+.AsignaturasP li {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.GruposDP {
+    width: 33.3%;
+    height: 100%;
+    border: 3px solid white;
+    margin-right: 2%;
+    overflow-y: auto;
+}
+
+.GruposDP h1 {
+    margin-bottom: 20px;
+}
+
+.GruposDP li {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.GruposSele {
+    width: 33.3%;
+    height: 100%;
+}
+
+.GruposSP {
+    width: 100%;
+    height: 80%;
+    border: 3px solid white;
+    overflow-y: auto;
+}
+
+.GruposSP h1 {
+    margin-bottom: 20px;
+}
+
+.GruposSP li {
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.BotonGuardar {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    height: 20%;
+}
+
+.BotonGuardar button{
+    background-color: #2F4050;
+    color: white;
+    border: 3px solid white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.BotonGuardar button:hover{
+    background-color: #253341;
+}
+
+.mensaje-dialogo-asignaturas {
+    width: 30vw;
+    height: 20vh;
+    margin: auto;
+    padding: 20px;
+    background-color: #2F4050;
+    color: white;
+    border: 3px solid black;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mensaje-dialogo-contenido-grupos button {
+    font-size: 14px;
+    background-color: #2F4050;
+    border: 2px solid white;
+    color: white;
+    cursor: pointer;
+}
+
+.mensaje-dialogo-grupos {
+    width: 30vw;
+    height: 25vh;
+    margin: auto;
+    padding: 20px;
+    background-color: #2F4050;
+    color: white;
+    border: 3px solid black;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mensaje-dialogo-grupos button{
+    margin-top: 0.5vh;
+}
+.mensaje-dialogo-grupos button:hover{
+    background-color: #253341;
+}
+
+.mensaje-dialogo-grupos p{
+    margin-bottom: 1.5vh;
+}
+

@@ -1,0 +1,103 @@
+.containerFormulario {
+    width: 30vw;
+    height: 40vh;
+    margin: auto;
+    padding: 20px;
+    background-color: #2F4050;
+    color: white;
+    border: 3px solid black;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+}
+
+.TituloAñadirEvento {
+    margin-bottom: 5%;
+}
+
+.containerFormulario label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.containerFormulario input[type="text"],
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+.containerFormulario input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.containerFormulario button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.containerFormulario button:hover {
+    background-color: #45a049;
+}
+
+.error-messageF {
+    color: red;
+    margin-bottom: 2%;
+}
+
+.Errores {
+    color: rgb(238, 95, 95); 
+    font-size: 14px;
+    margin-bottom: 2%;
+    margin-top: -3%;
+}
+
+.ErroresHoras {
+    color: rgb(238, 95, 95); 
+    font-size: 14px;
+    margin-bottom: 2%;
+    margin-top: 2%;
+}
+
+.ListaHoras,
+.ListaMinutos {
+  width: 20%;
+  margin: 0 auto;
+  overflow-y: auto;
+}
+
+.Fechas {
+    margin-bottom: 4%;
+}
+
+.mensaje-temporal-añadido {
+    width: 25vw;
+    height: 10vh;
+    margin: auto;
+    padding: 20px;
+    background-color: #2F4050;
+    color: white;
+    border: 3px solid black;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 20000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
