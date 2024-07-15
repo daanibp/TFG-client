@@ -237,6 +237,10 @@ function App() {
                             element={<AdminRegistration />}
                         />
                         <Route
+                            path="/adminNew"
+                            element={<AdminRegistration />}
+                        />
+                        <Route
                             path="/admin/gestioncalendarios"
                             element={<GestionCalendarios />}
                         />
