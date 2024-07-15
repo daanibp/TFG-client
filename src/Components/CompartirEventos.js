@@ -240,7 +240,7 @@ function CompartirEventos({
             for (let i = 0; i < eventosCompartidos.length; i += tamañoLote) {
                 const lote = eventosCompartidos.slice(i, i + tamañoLote);
                 const response = await axios.post(
-                    "http://localhost:5001/eventos/addLoteEventos",
+                    "https://miareapersonalserver.azurewebsites.net/eventos/addLoteEventos",
                     lote
                 );
                 console.log(
@@ -319,7 +319,7 @@ function CompartirEventos({
                             i + tamañoLote
                         );
                         const response = await axios.post(
-                            "http://localhost:5001/eventoscompartidos/addEventosCompartidos",
+                            "https://miareapersonalserver.azurewebsites.net/eventoscompartidos/addEventosCompartidos",
                             lote
                         );
                         console.log(

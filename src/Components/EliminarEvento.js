@@ -29,7 +29,7 @@ function EliminarEvento({
     const handleEliminarEvento = async (eventoId) => {
         try {
             await axios.delete(
-                `http://localhost:5001/eventos/delete/${eventoId}`
+                `https://miareapersonalserver.azurewebsites.net/eventos/delete/${eventoId}`
             );
             onEliminarEvento(eventoId, tipo);
             await handleRecuperarEventosEliminados();
@@ -47,7 +47,7 @@ function EliminarEvento({
 
             // Llamar a la API para eliminar todos los eventos
             await axios.delete(
-                "http://localhost:5001/eventos/deleteMultipleByUser",
+                "https://miareapersonalserver.azurewebsites.net/eventos/deleteMultipleByUser",
                 {
                     data: { ids: idsEventosEliminar },
                 }
@@ -78,7 +78,7 @@ function EliminarEvento({
             );
 
             const response = await axios.get(
-                `http://localhost:5001/eventos/eliminadosPorUsuario/${idUsuario}`
+                `https://miareapersonalserver.azurewebsites.net/eventos/eliminadosPorUsuario/${idUsuario}`
             );
 
             // Actualizar el estado con los eventos recuperados
@@ -100,7 +100,7 @@ function EliminarEvento({
         try {
             // Llamar a la ruta PUT para marcar el evento como no eliminado
             await axios.put(
-                `http://localhost:5001/eventos/recuperar/${eventoId}`
+                `https://miareapersonalserver.azurewebsites.net/eventos/recuperar/${eventoId}`
             );
 
             // Filtrar los eventos eliminados actualizados en el estado

@@ -20,10 +20,14 @@ function CalendarioGlobal() {
     const [mostrarMensajeAñadido, setMostrarMensajeAñadido] = useState(false);
 
     useEffect(() => {
-        axios.get(`http://localhost:5001/eventosglobales`).then((response) => {
-            console.log("Eventos Globales: ", response.data);
-            setEventosGlobales(response.data);
-        });
+        axios
+            .get(
+                `https://miareapersonalserver.azurewebsites.net/eventosglobales`
+            )
+            .then((response) => {
+                console.log("Eventos Globales: ", response.data);
+                setEventosGlobales(response.data);
+            });
     }, []);
 
     const MessageBoxGoogle = ({ message, onConfirm, onCancel }) => {

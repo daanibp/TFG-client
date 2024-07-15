@@ -144,23 +144,35 @@ function CalendarioEscolar() {
                     eventosCompartidosParaTiResponse,
                     eventosArgResponse,
                 ] = await Promise.all([
-                    axios.get(`http://localhost:5001/eventos/${id}`),
-                    axios.get(`http://localhost:5001/eventos/ex/${id}`),
-                    axios.get(`http://localhost:5001/asignaturas`),
-                    axios.get(`http://localhost:5001/grupos`),
                     axios.get(
-                        `http://localhost:5001/grupos/usuario/${id}/grupos`
-                    ),
-                    axios.get(`http://localhost:5001/usuarios/allUsers/all`),
-                    axios.get(
-                        `http://localhost:5001/asignaturas/usuario/${id}/asignaturas`
-                    ),
-                    axios.get(`http://localhost:5001/matriculas`),
-                    axios.get(
-                        `http://localhost:5001/eventoscompartidos/getEventosCompartidos/toUsuario/${id}`
+                        `https://miareapersonalserver.azurewebsites.net/eventos/${id}`
                     ),
                     axios.get(
-                        `http://localhost:5001/eventos/eventosRelacionados/${id}`
+                        `https://miareapersonalserver.azurewebsites.net/eventos/ex/${id}`
+                    ),
+                    axios.get(
+                        `https://miareapersonalserver.azurewebsites.net/asignaturas`
+                    ),
+                    axios.get(
+                        `https://miareapersonalserver.azurewebsites.net/grupos`
+                    ),
+                    axios.get(
+                        `https://miareapersonalserver.azurewebsites.net/grupos/usuario/${id}/grupos`
+                    ),
+                    axios.get(
+                        `https://miareapersonalserver.azurewebsites.net/usuarios/allUsers/all`
+                    ),
+                    axios.get(
+                        `https://miareapersonalserver.azurewebsites.net/asignaturas/usuario/${id}/asignaturas`
+                    ),
+                    axios.get(
+                        `https://miareapersonalserver.azurewebsites.net/matriculas`
+                    ),
+                    axios.get(
+                        `https://miareapersonalserver.azurewebsites.net/eventoscompartidos/getEventosCompartidos/toUsuario/${id}`
+                    ),
+                    axios.get(
+                        `https://miareapersonalserver.azurewebsites.net/eventos/eventosRelacionados/${id}`
                     ),
                 ]);
 
@@ -483,13 +495,15 @@ function CalendarioEscolar() {
     // Función para recuperar un evento del estado
     const recuperarEvento = async (eventoId, tipo) => {
         await axios
-            .get(`http://localhost:5001/eventos/${id}`)
+            .get(`https://miareapersonalserver.azurewebsites.net/eventos/${id}`)
             .then((response) => {
                 console.log("Clases: ", response.data);
                 setEventos(response.data);
             });
         await axios
-            .get(`http://localhost:5001/eventos/ex/${id}`)
+            .get(
+                `https://miareapersonalserver.azurewebsites.net/eventos/ex/${id}`
+            )
             .then((response) => {
                 console.log("Examenes: ", response.data);
                 setEventosExamenes(response.data);
@@ -500,19 +514,23 @@ function CalendarioEscolar() {
     const handleCerrarMatricularProfesor = async () => {
         console.log("Se ejecutó la función al cerrar MatricularProfesor");
         await axios
-            .get(`http://localhost:5001/grupos/usuario/${id}/grupos`)
+            .get(
+                `https://miareapersonalserver.azurewebsites.net/grupos/usuario/${id}/grupos`
+            )
             .then((response) => {
                 console.log("Grupos Seleccionados: ", response.data);
                 setGruposSeleccionados(response.data);
             });
         await axios
-            .get(`http://localhost:5001/eventos/${id}`)
+            .get(`https://miareapersonalserver.azurewebsites.net/eventos/${id}`)
             .then((response) => {
                 console.log("Clases: ", response.data);
                 setEventos(response.data);
             });
         await axios
-            .get(`http://localhost:5001/eventos/ex/${id}`)
+            .get(
+                `https://miareapersonalserver.azurewebsites.net/eventos/ex/${id}`
+            )
             .then((response) => {
                 console.log("Examenes: ", response.data);
                 setEventosExamenes(response.data);
@@ -525,14 +543,16 @@ function CalendarioEscolar() {
         console.log("Se ejecutó la función al cerrar Ver Solicitudes");
         await axios
             .get(
-                `http://localhost:5001/eventoscompartidos/getEventosCompartidos/toUsuario/${id}`
+                `https://miareapersonalserver.azurewebsites.net/eventoscompartidos/getEventosCompartidos/toUsuario/${id}`
             )
             .then((response) => {
                 console.log("Eventos Compartidos Para Ti: ", response.data);
                 setEventosCompartidosParaTi(response.data);
             });
         await axios
-            .get(`http://localhost:5001/eventos/eventosRelacionados/${id}`)
+            .get(
+                `https://miareapersonalserver.azurewebsites.net/eventos/eventosRelacionados/${id}`
+            )
             .then((response) => {
                 console.log(
                     "EventosArg que se quieren compartir para ti: ",
@@ -547,13 +567,15 @@ function CalendarioEscolar() {
     const handleCerrarCompartirEventos = async () => {
         console.log("Se ejecutó la función al cerrar Compartir Eventos");
         await axios
-            .get(`http://localhost:5001/eventos/${id}`)
+            .get(`https://miareapersonalserver.azurewebsites.net/eventos/${id}`)
             .then((response) => {
                 console.log("Clases: ", response.data);
                 setEventos(response.data);
             });
         await axios
-            .get(`http://localhost:5001/eventos/ex/${id}`)
+            .get(
+                `https://miareapersonalserver.azurewebsites.net/eventos/ex/${id}`
+            )
             .then((response) => {
                 console.log("Examenes: ", response.data);
                 setEventosExamenes(response.data);

@@ -33,12 +33,12 @@ function VerSolicitudes({
 
     const showEventDetails = async (eventoId) => {
         const response = await axios.get(
-            `http://localhost:5001/eventos/evento/${eventoId}`
+            `https://miareapersonalserver.azurewebsites.net/eventos/evento/${eventoId}`
         );
         setSelectedSolicitud(response.data);
 
         const response2 = await axios.get(
-            `http://localhost:5001/usuarios/${response.data.UsuarioId}`
+            `https://miareapersonalserver.azurewebsites.net/usuarios/${response.data.UsuarioId}`
         );
         setUsuarioCompartido(response2.data.uo);
     };
@@ -67,7 +67,7 @@ function VerSolicitudes({
     const aceptarSolicitud = async (eventoCompartidoId, eventoId) => {
         try {
             const response = await axios.post(
-                `http://localhost:5001/eventosCompartidos/aceptarEventoCompartido/${eventoCompartidoId}/${idUsuario}`,
+                `https://miareapersonalserver.azurewebsites.net/eventosCompartidos/aceptarEventoCompartido/${eventoCompartidoId}/${idUsuario}`,
                 {
                     eventoId: eventoId,
                 }
@@ -113,7 +113,7 @@ function VerSolicitudes({
         try {
             // Realizar la solicitud PUT al backend para denegar la solicitud
             const response = await axios.put(
-                `http://localhost:5001/eventosCompartidos/denegarSolicitud/${eventoId}`
+                `https://miareapersonalserver.azurewebsites.net/eventosCompartidos/denegarSolicitud/${eventoId}`
             );
             //window.location.reload();
             // Si la solicitud se completa exitosamente, verificar si se eliminó el evento
@@ -161,7 +161,7 @@ function VerSolicitudes({
     const fetchEventosCompartidos = async () => {
         try {
             const response = await axios.get(
-                `http://localhost:5001/eventoscompartidos/getEventosCompartidos/toUsuario/${idUsuario}`
+                `https://miareapersonalserver.azurewebsites.net/eventoscompartidos/getEventosCompartidos/toUsuario/${idUsuario}`
             );
             setEventosCompartidosActualizados(response.data);
         } catch (error) {

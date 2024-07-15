@@ -140,7 +140,7 @@ function SolicitarEventoGlobal({ onSolicitarEvento, userId }) {
 
         try {
             const response = await axios.post(
-                "http://localhost:5001/solicitudEventos/addSolicitudEvento",
+                "https://miareapersonalserver.azurewebsites.net/solicitudEventos/addSolicitudEvento",
                 {
                     estado: data.estado,
                     asunto: data.asunto,

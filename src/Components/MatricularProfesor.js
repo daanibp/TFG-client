@@ -49,7 +49,7 @@ function MatricularProfesor({
     const BorrarMatriculas = async () => {
         try {
             const response = await axios.delete(
-                `http://localhost:5001/matriculas/eliminarMatriculasUsuario/${idUsuario}`
+                `https://miareapersonalserver.azurewebsites.net/matriculas/eliminarMatriculasUsuario/${idUsuario}`
             );
             console.log("Matrículas eliminadas correctamente:", response.data);
         } catch (error) {
@@ -84,7 +84,7 @@ function MatricularProfesor({
             for (let i = 0; i < Matriculas.length; i += tamañoLote) {
                 const lote = Matriculas.slice(i, i + tamañoLote);
                 const response = await axios.post(
-                    "http://localhost:5001/matriculas/addLoteMatriculas",
+                    "https://miareapersonalserver.azurewebsites.net/matriculas/addLoteMatriculas",
                     lote
                 );
                 console.log(
@@ -102,7 +102,7 @@ function MatricularProfesor({
                 // Manejamos desde el frontend el borrado de los eventos asociados previamente
                 try {
                     await axios.delete(
-                        `http://localhost:5001/eventos/deleteByUsuario/${idUsuario}`
+                        `https://miareapersonalserver.azurewebsites.net/eventos/deleteByUsuario/${idUsuario}`
                     );
                 } catch (error) {
                     if (error.response && error.response.status === 404) {

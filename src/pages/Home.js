@@ -14,7 +14,9 @@ function Home() {
     useEffect(() => {
         if (!authState.admin) {
             axios
-                .get(`http://localhost:5001/notificaciones/${authState.id}`)
+                .get(
+                    `https://miareapersonalserver.azurewebsites.net/notificaciones/${authState.id}`
+                )
                 .then((response) => {
                     const groupedNotificaciones = groupNotificaciones(
                         response.data
@@ -25,7 +27,9 @@ function Home() {
         }
         if (authState.admin) {
             axios
-                .get(`http://localhost:5001/notificacionesglobales`)
+                .get(
+                    `https://miareapersonalserver.azurewebsites.net/notificacionesglobales`
+                )
                 .then((response) => {
                     setNotificacionesGlobales(response.data);
                     console.log("Notificaciones Globales: ", response.data);

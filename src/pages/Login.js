@@ -17,7 +17,10 @@ function Login() {
     const login = () => {
         const data = { uo: uo, password: password };
         axios
-            .post("http://localhost:5001/usuarios/login", data)
+            .post(
+                "https://miareapersonalserver.azurewebsites.net/usuarios/login",
+                data
+            )
             .then((response) => {
                 if (response.data.error) {
                     //alert(response.data.error);

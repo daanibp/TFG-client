@@ -13,34 +13,36 @@ function GestionMatriculas() {
     const [filtroEstado, setFiltroEstado] = useState("Todos");
 
     useEffect(() => {
-        axios.get(`http://localhost:5001/matriculas`).then(async (response) => {
-            console.log("Solicitudes de matrícula: ", response.data);
-            // Mapea sobre las matrículas y para cada una realiza una nueva solicitud para obtener los datos de usuario y asignatura
-            const solicitudesConDetalles = await Promise.all(
-                response.data.map(async (matricula) => {
-                    // Realiza una solicitud para obtener los datos del usuario
-                    const usuarioResponse = await axios.get(
-                        `http://localhost:5001/usuarios/${matricula.UsuarioId}`
-                    );
-                    const usuario = usuarioResponse.data;
+        axios
+            .get(`https://miareapersonalserver.azurewebsites.net/matriculas`)
+            .then(async (response) => {
+                console.log("Solicitudes de matrícula: ", response.data);
+                // Mapea sobre las matrículas y para cada una realiza una nueva solicitud para obtener los datos de usuario y asignatura
+                const solicitudesConDetalles = await Promise.all(
+                    response.data.map(async (matricula) => {
+                        // Realiza una solicitud para obtener los datos del usuario
+                        const usuarioResponse = await axios.get(
+                            `https://miareapersonalserver.azurewebsites.net/usuarios/${matricula.UsuarioId}`
+                        );
+                        const usuario = usuarioResponse.data;
 
-                    // Realiza una solicitud para obtener los datos de la asignatura
-                    const asignaturaResponse = await axios.get(
-                        `http://localhost:5001/asignaturas/IdNumerico/${matricula.AsignaturaId}`
-                    );
-                    const asignatura = asignaturaResponse.data;
+                        // Realiza una solicitud para obtener los datos de la asignatura
+                        const asignaturaResponse = await axios.get(
+                            `http://localhost:5001/asignaturas/IdNumerico/${matricula.AsignaturaId}`
+                        );
+                        const asignatura = asignaturaResponse.data;
 
-                    // Retorna un nuevo objeto que contiene la matrícula junto con los datos del usuario y la asignatura
-                    return {
-                        ...matricula,
-                        usuario: usuario,
-                        asignatura: asignatura,
-                    };
-                })
-            );
+                        // Retorna un nuevo objeto que contiene la matrícula junto con los datos del usuario y la asignatura
+                        return {
+                            ...matricula,
+                            usuario: usuario,
+                            asignatura: asignatura,
+                        };
+                    })
+                );
 
-            setSolicitudes(solicitudesConDetalles);
-        });
+                setSolicitudes(solicitudesConDetalles);
+            });
     }, []);
 
     // Función para filtrar las solicitudes por estado
@@ -59,13 +61,17 @@ function GestionMatriculas() {
 
     const aceptarSolicitud = (solicitud) => {
         // Estado => Aceptada
-        axios.put(`http://localhost:5001/matriculas/aceptar/${solicitud.id}`);
+        axios.put(
+            `https://miareapersonalserver.azurewebsites.net/matriculas/aceptar/${solicitud.id}`
+        );
         window.location.reload();
     };
 
     const denegarSolicitud = (solicitud) => {
         // Estado => Denegada
-        axios.put(`http://localhost:5001/matriculas/denegar/${solicitud.id}`);
+        axios.put(
+            `https://miareapersonalserver.azurewebsites.net/matriculas/denegar/${solicitud.id}`
+        );
         window.location.reload();
     };
 

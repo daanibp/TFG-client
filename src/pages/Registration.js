@@ -24,7 +24,7 @@ function Registration() {
     const onSubmit = async (data, { resetForm }) => {
         try {
             const response = await axios.post(
-                "http://localhost:5001/usuarios/register",
+                "https://miareapersonalserver.azurewebsites.net/usuarios/register",
                 data
             );
             if (response.status === 200) {

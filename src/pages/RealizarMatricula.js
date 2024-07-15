@@ -19,43 +19,47 @@ function RealizarMatricula() {
     const [confirmacion, setConfirmacion] = useState(false);
 
     useEffect(() => {
-        axios.get(`http://localhost:5001/asignaturas`).then((response) => {
-            console.log("Asignaturas: ", response.data);
-            setAsignaturas(response.data);
-            // Verificar si cada asignatura seleccionada está matriculada
-            Promise.all(
-                response.data.map((asignatura) =>
-                    axios
-                        .get(
-                            `http://localhost:5001/matriculas/checkMatriculada`,
-                            {
-                                params: {
-                                    UsuarioId: authState.id,
-                                    AsignaturaId: asignatura.id,
-                                },
-                            }
-                        )
-                        .then((response) => {
-                            if (response.data.matriculada) {
-                                setMatriculadas((prevMatriculadas) => [
-                                    ...prevMatriculadas,
-                                    asignatura,
-                                ]);
-                            }
-                        })
-                        .catch((error) => {
-                            console.error(
-                                `Error al verificar matriculación de la asignatura ${asignatura.id}:`,
-                                error
-                            );
-                        })
-                )
-            );
-        });
-        axios.get(`http://localhost:5001/grupos`).then((response) => {
-            console.log("Grupos: ", response.data);
-            setGrupos(response.data);
-        });
+        axios
+            .get(`https://miareapersonalserver.azurewebsites.net/asignaturas`)
+            .then((response) => {
+                console.log("Asignaturas: ", response.data);
+                setAsignaturas(response.data);
+                // Verificar si cada asignatura seleccionada está matriculada
+                Promise.all(
+                    response.data.map((asignatura) =>
+                        axios
+                            .get(
+                                `https://miareapersonalserver.azurewebsites.net/matriculas/checkMatriculada`,
+                                {
+                                    params: {
+                                        UsuarioId: authState.id,
+                                        AsignaturaId: asignatura.id,
+                                    },
+                                }
+                            )
+                            .then((response) => {
+                                if (response.data.matriculada) {
+                                    setMatriculadas((prevMatriculadas) => [
+                                        ...prevMatriculadas,
+                                        asignatura,
+                                    ]);
+                                }
+                            })
+                            .catch((error) => {
+                                console.error(
+                                    `Error al verificar matriculación de la asignatura ${asignatura.id}:`,
+                                    error
+                                );
+                            })
+                    )
+                );
+            });
+        axios
+            .get(`https://miareapersonalserver.azurewebsites.net/grupos`)
+            .then((response) => {
+                console.log("Grupos: ", response.data);
+                setGrupos(response.data);
+            });
     }, [authState.id]);
 
     const seleccionarAsignatura = (asignatura) => {
@@ -125,11 +129,14 @@ function RealizarMatricula() {
             });
 
             axios
-                .post("http://localhost:5001/matriculas/addLoteMatriculas", {
-                    estado: "Pendiente",
-                    UsuarioId: authState.id,
-                    matriculas: combinaciones,
-                })
+                .post(
+                    "https://miareapersonalserver.azurewebsites.net/matriculas/addLoteMatriculas",
+                    {
+                        estado: "Pendiente",
+                        UsuarioId: authState.id,
+                        matriculas: combinaciones,
+                    }
+                )
                 .then((response) => {
                     // Actualizamos matriculadas []
                     setMatriculadas((prevMatriculadas) => [

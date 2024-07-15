@@ -33,11 +33,14 @@ function App() {
 
     useEffect(() => {
         axios
-            .get("http://localhost:5001/usuarios/auth", {
-                headers: {
-                    accessToken: localStorage.getItem("accessToken"),
-                },
-            })
+            .get(
+                "https://miareapersonalserver.azurewebsites.net/usuarios/auth",
+                {
+                    headers: {
+                        accessToken: localStorage.getItem("accessToken"),
+                    },
+                }
+            )
             .then((response) => {
                 if (response.data.error) {
                     setAuthState((prevAuthState) => ({
@@ -80,7 +83,7 @@ function App() {
 
         try {
             const response = await axios.put(
-                "http://localhost:5001/usuarios/changePassword",
+                "https://miareapersonalserver.azurewebsites.net/usuarios/changePassword",
                 { uo: authState.uo, newPassword: newPassword }
             );
             console.log("Respuesta del servidor:", response.data);

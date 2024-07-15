@@ -149,7 +149,7 @@ function AñadirEvento({ id, onAgregarEvento, tipo, isGlobal }) {
 
         try {
             const response = await axios.post(
-                "http://localhost:5001/eventos/addEvent",
+                "https://miareapersonalserver.azurewebsites.net/eventos/addEvent",
                 {
                     asunto: data.asunto,
                     fechaDeComienzo: fechaC,

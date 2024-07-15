@@ -54,7 +54,7 @@ function AdminRegistration() {
     const onSubmit = async (data, { resetForm }) => {
         try {
             const response = await axios.post(
-                "http://localhost:5001/usuarios/crearadmin",
+                "https://miareapersonalserver.azurewebsites.net/usuarios/crearadmin",
                 data
             );
             if (response.data === "SUCCESS") {

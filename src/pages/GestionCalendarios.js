@@ -42,25 +42,35 @@ function GestionCalendarios() {
     const [mensajeExamenes, setMensajeExamenes] = useState("");
 
     useEffect(() => {
-        axios.get(`http://localhost:5001/solicitudEventos`).then((response) => {
-            console.log("Solicitudes: ", response.data);
-            setSolicitudes(response.data);
-        });
-        axios.get(`http://localhost:5001/asignaturas`).then((response) => {
-            console.log("Asignaturas: ", response.data);
-            setAsignaturas(response.data);
-        });
-        axios.get(`http://localhost:5001/grupos`).then((response) => {
-            console.log("Grupos: ", response.data);
-            setGrupos(response.data);
-        });
+        axios
+            .get(
+                `https://miareapersonalserver.azurewebsites.net/solicitudEventos`
+            )
+            .then((response) => {
+                console.log("Solicitudes: ", response.data);
+                setSolicitudes(response.data);
+            });
+        axios
+            .get(`https://miareapersonalserver.azurewebsites.net/asignaturas`)
+            .then((response) => {
+                console.log("Asignaturas: ", response.data);
+                setAsignaturas(response.data);
+            });
+        axios
+            .get(`https://miareapersonalserver.azurewebsites.net/grupos`)
+            .then((response) => {
+                console.log("Grupos: ", response.data);
+                setGrupos(response.data);
+            });
     }, []);
 
     // SOLICITUDES
 
     const showSolicitudDetails = (solicitud) => {
         axios
-            .get(`http://localhost:5001/usuarios/${solicitud.UsuarioId}`)
+            .get(
+                `https://miareapersonalserver.azurewebsites.net/usuarios/${solicitud.UsuarioId}`
+            )
             .then((response) => {
                 setUsuarioSolicitante(response.data.uo);
             })
@@ -77,7 +87,7 @@ function GestionCalendarios() {
     const aceptarSolicitud = (solicitud) => {
         // Actualizo solicitud en la BBDD
         axios.put(
-            `http://localhost:5001/solicitudEventos/aceptar/${solicitud.id}`
+            `https://miareapersonalserver.azurewebsites.net/solicitudEventos/aceptar/${solicitud.id}`
         );
         window.location.reload();
         // Se crea el evento global
@@ -100,7 +110,7 @@ function GestionCalendarios() {
             solicitudEventoId: solicitud.id,
         };
         axios.post(
-            "http://localhost:5001/eventosglobales/addGlobalEvent",
+            "https://miareapersonalserver.azurewebsites.net/eventosglobales/addGlobalEvent",
             globalEventData
         );
     };
@@ -108,7 +118,7 @@ function GestionCalendarios() {
     const denegarSolicitud = (solicitud) => {
         // Actualizo solicitud en la BBDD
         axios.put(
-            `http://localhost:5001/solicitudEventos/denegar/${solicitud.id}`
+            `https://miareapersonalserver.azurewebsites.net/solicitudEventos/denegar/${solicitud.id}`
         );
         window.location.reload();
     };
@@ -383,7 +393,7 @@ function GestionCalendarios() {
             for (let i = 0; i < sesionesNuevas.length; i += tamañoLote) {
                 const lote = sesionesNuevas.slice(i, i + tamañoLote);
                 const response = await axios.post(
-                    "http://localhost:5001/sesiones/addLoteSesiones",
+                    "https://miareapersonalserver.azurewebsites.net/sesiones/addLoteSesiones",
                     {
                         cuatri: cuatri,
                         nuevasSesiones: lote,
@@ -549,7 +559,7 @@ function GestionCalendarios() {
             ) {
                 const lote = sesionesExamenesNuevas.slice(i, i + tamañoLote);
                 const response = await axios.post(
-                    "http://localhost:5001/sesiones/addLoteSesiones",
+                    "https://miareapersonalserver.azurewebsites.net/sesiones/addLoteSesiones",
                     {
                         cuatri: cuatri,
                         nuevasSesiones: lote,

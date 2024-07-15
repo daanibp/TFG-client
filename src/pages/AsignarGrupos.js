@@ -42,15 +42,19 @@ function AsignarGrupos() {
         useState(false);
 
     useEffect(() => {
-        axios.get(`http://localhost:5001/asignaturas`).then((response) => {
-            console.log("Asignaturas: ", response.data);
-            setAsignaturas(response.data);
-        });
-        axios.get(`http://localhost:5001/grupos`).then((response) => {
-            console.log("Grupos: ", response.data);
-            setGrupos(response.data);
-            setGruposNuevos([]);
-        });
+        axios
+            .get(`https://miareapersonalserver.azurewebsites.net/asignaturas`)
+            .then((response) => {
+                console.log("Asignaturas: ", response.data);
+                setAsignaturas(response.data);
+            });
+        axios
+            .get(`https://miareapersonalserver.azurewebsites.net/grupos`)
+            .then((response) => {
+                console.log("Grupos: ", response.data);
+                setGrupos(response.data);
+                setGruposNuevos([]);
+            });
         // axios
         //     .get(`http://localhost:5001/matriculas/matriculasConGrupo`)
         //     .then((response) => {
@@ -59,7 +63,9 @@ function AsignarGrupos() {
 
         //     });
         axios
-            .get(`http://localhost:5001/usuarios/allUsers/all`)
+            .get(
+                `https://miareapersonalserver.azurewebsites.net/usuarios/allUsers/all`
+            )
             .then((response) => {
                 console.log("Usuarios: ", response.data);
                 setUsuarios(response.data);
@@ -105,7 +111,7 @@ function AsignarGrupos() {
             try {
                 setAsignaturas(dataAsignaturas);
                 const response = await axios.post(
-                    "http://localhost:5001/asignaturas/addLoteAsignaturas",
+                    "https://miareapersonalserver.azurewebsites.net/asignaturas/addLoteAsignaturas",
                     dataAsignaturas
                 );
                 if (response.data.asignaturasCreadas.length > 0) {
@@ -294,7 +300,7 @@ function AsignarGrupos() {
         try {
             if (Grupos.length !== 0) {
                 const response = await axios.post(
-                    "http://localhost:5001/grupos/addGrupos",
+                    "https://miareapersonalserver.azurewebsites.net/grupos/addGrupos",
                     Grupos
                 );
                 if (response.data.gruposCreados.length > 0) {
@@ -355,7 +361,7 @@ function AsignarGrupos() {
         try {
             if (Usuarios.length !== 0) {
                 const response = await axios.post(
-                    "http://localhost:5001/usuarios/addLoteUsuarios/alumnos/inactivos",
+                    "https://miareapersonalserver.azurewebsites.net/usuarios/addLoteUsuarios/alumnos/inactivos",
                     Usuarios
                 );
                 if (response.data.usuariosCreados.length > 0) {
@@ -545,7 +551,7 @@ function AsignarGrupos() {
             for (let i = 0; i < Matriculas.length; i += tamañoLote) {
                 const lote = Matriculas.slice(i, i + tamañoLote);
                 const response = await axios.post(
-                    "http://localhost:5001/matriculas/addLoteMatriculas",
+                    "https://miareapersonalserver.azurewebsites.net/matriculas/addLoteMatriculas",
                     lote
                 );
                 console.log(
@@ -560,7 +566,7 @@ function AsignarGrupos() {
 
             // Obtener las matrículas de los alumnos
             const responseMatriculasAlumnos = await axios.get(
-                "http://localhost:5001/matriculas/matriculasAlumnos"
+                "https://miareapersonalserver.azurewebsites.net/matriculas/matriculasAlumnos"
             );
             const matriculasAlumnos =
                 responseMatriculasAlumnos.data.matriculasAlumnos;
@@ -584,7 +590,7 @@ function AsignarGrupos() {
             for (let i = 0; i < matriculasChange.length; i += tamañoLote) {
                 const lote = matriculasChange.slice(i, i + tamañoLote);
                 const response1 = await axios.post(
-                    "http://localhost:5001/matriculas/updateMatriculasVer",
+                    "https://miareapersonalserver.azurewebsites.net/matriculas/updateMatriculasVer",
                     lote
                 );
                 console.log(
