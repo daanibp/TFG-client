@@ -214,24 +214,18 @@ function App() {
                         </div>
                     </div>
                     <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/login" element={<Login />} />
                         <Route
-                            path="https://blue-moss-0c93d7110.5.azurestaticapps.net/"
-                            element={<Home />}
-                        />
-                        <Route
-                            path="https://blue-moss-0c93d7110.5.azurestaticapps.net/login"
-                            element={<Login />}
-                        />
-                        <Route
-                            path="https://blue-moss-0c93d7110.5.azurestaticapps.net/registration"
+                            path="/registration"
                             element={<Registration />}
                         />
                         <Route
-                            path="https://blue-moss-0c93d7110.5.azurestaticapps.net/calendar/calendarioescolar/:id"
+                            path="/calendar/calendarioescolar/:id"
                             element={<CalendarioEscolar />}
                         />
                         <Route
-                            path="https://blue-moss-0c93d7110.5.azurestaticapps.net/calendar/calendarioglobal"
+                            path="/calendar/calendarioglobal"
                             element={<CalendarioGlobal />}
                         />
                         {/* <Route
@@ -239,11 +233,11 @@ function App() {
                             element={<RealizarMatricula />}
                         /> */}
                         <Route
-                            path="https://blue-moss-0c93d7110.5.azurestaticapps.net/admin/crearadmin"
+                            path="/admin/crearadmin"
                             element={<AdminRegistration />}
                         />
                         <Route
-                            path="https://blue-moss-0c93d7110.5.azurestaticapps.net/admin/gestioncalendarios"
+                            path="/admin/gestioncalendarios"
                             element={<GestionCalendarios />}
                         />
                         {/* <Route
@@ -251,7 +245,7 @@ function App() {
                             element={<GestionMatriculas />}
                         /> */}
                         <Route
-                            path="https://blue-moss-0c93d7110.5.azurestaticapps.net/admin/asignargrupos"
+                            path="/admin/asignargrupos"
                             element={<AsignarGrupos />}
                         />
                         <Route path="*" element={<PageNotFound />} />
