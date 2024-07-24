@@ -110,6 +110,7 @@ function GestionCalendarios() {
             showTimeAs: solicitud.showTimeAs,
             solicitudEventoId: solicitud.id,
         };
+        console.log("Evento Global:", globalEventData); // Verificar que el ID está presente
         axios.post(
             "https://miareapersonalserver.azurewebsites.net/eventosglobales/addGlobalEvent",
             globalEventData
