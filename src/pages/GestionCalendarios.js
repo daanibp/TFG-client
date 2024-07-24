@@ -85,6 +85,7 @@ function GestionCalendarios() {
     };
 
     const aceptarSolicitud = (solicitud) => {
+        console.log("Solicitud ID:", solicitud); // Verificar que el ID está presente
         // Actualizo solicitud en la BBDD
         axios.put(
             `https://miareapersonalserver.azurewebsites.net/solicitudEventos/aceptar/${solicitud.id}`
