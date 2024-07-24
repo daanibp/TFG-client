@@ -84,10 +84,10 @@ function GestionCalendarios() {
         setSelectedSolicitud(null);
     };
 
-    const aceptarSolicitud = (solicitud) => {
+    const aceptarSolicitud = async (solicitud) => {
         console.log("Solicitud ID:", solicitud); // Verificar que el ID está presente
         // Actualizo solicitud en la BBDD
-        axios.put(
+        await axios.put(
             `https://miareapersonalserver.azurewebsites.net/solicitudEventos/aceptar/${solicitud.id}`
         );
         window.location.reload();
@@ -108,10 +108,10 @@ function GestionCalendarios() {
             private: solicitud.private,
             sensitivity: solicitud.sensitivity,
             showTimeAs: solicitud.showTimeAs,
-            solicitudEventoId: solicitud.id,
+            SolicitudEventoId: solicitud.id,
         };
         console.log("Evento Global:", globalEventData); // Verificar que el ID está presente
-        axios.post(
+        await axios.post(
             "https://miareapersonalserver.azurewebsites.net/eventosglobales/addGlobalEvent",
             globalEventData
         );
