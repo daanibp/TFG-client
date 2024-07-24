@@ -86,6 +86,12 @@ function GestionCalendarios() {
 
     const aceptarSolicitud = async (solicitud) => {
         console.log("Solicitud ID:", solicitud); // Verificar que el ID está presente
+        if (solicitud.estado === "Aceptada") {
+            console.log(
+                "La solicitud ya está aceptada. No se realizará ninguna acción."
+            );
+            return;
+        }
         // Actualizo solicitud en la BBDD
         await axios.put(
             `https://miareapersonalserver.azurewebsites.net/solicitudEventos/aceptar/${solicitud.id}`
